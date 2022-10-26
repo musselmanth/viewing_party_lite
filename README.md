@@ -23,7 +23,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 1. Clone the repository: `git clone git@github.com:musselmanth/viewing_party_lite.git`
 2. Install dependencies: `bundle install`
 3. Setup the PostgreSQL database: `rails db:{create,migrate}`
-4. Optionally, a test admin account can be setup by running `rails db:seed`. The email and password for login are "admin@test.com" and "test123".
+4. Optionally, test accounts can be setup by running `rails db:seed`. The emails and passwords to log in are listed on the app landing page.
 5. View the app in your browser by running `rails server` and visiting `http://localhost:3000`
 
 ## Notable Features / Accomplishments

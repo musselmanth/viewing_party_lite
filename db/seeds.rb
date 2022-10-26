@@ -7,4 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(name: "Test Admin", email: "admin@test.com", password: "test123", role: :admin)
+User.create(name: "Bob Benson", email: "bb@test.com", password: "test123")
+User.create(name: "Janet Johnson", email: "jj@test.com", password: "test123")
+User.create(name: "Sally Sheffield", email: "ss@test.com", password: "test123")
+User.create(name: "Robert Redford", email: "rr@test.com", password: "test123")
 

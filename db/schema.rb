@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_25_232349) do
+ActiveRecord::Schema.define(version: 2022_10_26_144114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2022_10_25_232349) do
     t.bigint "host_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_path"
+    t.string "movie_title"
     t.index ["host_id"], name: "index_viewing_parties_on_host_id"
   end
 
