@@ -1,4 +1,5 @@
-<h2><%= current_user.name %>'s Dashboard</h2>
+<% admin_view ||= false %>
+<h2><%= current_user.name %>'s Dashboard <%= "(Admin View)" if admin_view %></h2>
 <br>
 <%= button_to "Discover Movies", discover_path, class: "btn btn-primary btn-lg", method: :get %>
 <br>
@@ -23,7 +24,7 @@
           <%= link_to movie_path(vp.movie_id), class: "text-decoration-none" do %>
             <h5 class="card-title"><%= vp.movie_title %></h5>
           <% end %>
-          <p class="card-text">
+          <div class="card-text">
             <%= vp.date.strftime("%B %-d, %Y") %><br>
             <%= vp.start_time.strftime("%l:%M %P") %><br><br>
             <strong>Host:</strong> <%= vp.host.name %><br>
@@ -37,7 +38,8 @@
                 <% end %>
               <% end %>
             </ul>
-          </p> 
+          </div>
+          <div class="mt-auto"><%= button_to "Remove #{ admin_view ? current_user.name : "Me" }", viewing_party_invitee_path(vp.viewing_party_invitees.find_by(user: current_user)), method: :delete, class: "w-100 btn btn-outline-danger btn-sm" %></div>  
         </div>   
       </div>
     <% end %>
@@ -59,11 +61,11 @@
     <% current_user.hosted_viewing_parties.each do |vp| %>
       <div class="g-col-3 card" id="vp2_<%= vp.movie_id %>">
         <img id="movie_img_<%= vp.movie_id %>" src="<%= vp.image_path %>" class="card-img-top"><br>
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <%= link_to movie_path(vp.movie_id), class: "text-decoration-none" do %>
             <h5 class="card-title"><%= vp.movie_title %></h5>
           <% end %>
-          <p class="card-text">
+          <div class="card-text">
             <%= vp.date.strftime("%B %-d, %Y") %><br>
             <%= vp.start_time.strftime("%l:%M %P") %><br><br>
             <strong>Host:</strong> You!<br>
@@ -77,8 +79,8 @@
                 <% end %>
               <% end %>
             </ul>
-          </p>
-          <%= button_to "Cancel Viewing Party", movie_viewing_party_path(vp.movie_id, vp.id), method: :delete, class: "btn btn-danger butn-sm" %> 
+          </div>
+          <div class="mt-auto"><%= button_to "Cancel Viewing Party", movie_viewing_party_path(vp.movie_id, vp.id), method: :delete, class: "w-100 btn btn-outline-danger btn-sm" %></div> 
         </div>   
       </div>
     <% end %>

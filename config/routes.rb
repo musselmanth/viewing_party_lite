@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :show] do
     resources :viewing_parties, only: [:new, :create, :destroy]
   end
+  
+  resources :viewing_party_invitees, only: [:destroy]
 
   namespace :admin do
     get '/dashboard', to: 'dashboard#show'

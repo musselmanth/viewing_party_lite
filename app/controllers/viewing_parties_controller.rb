@@ -17,8 +17,10 @@ class ViewingPartiesController < ApplicationController
   end
 
   def destroy
-    ViewingParty.find(params[:id]).destroy
-    redirect_to dashboard_path
+    vp = ViewingParty.find(params[:id])
+    user_id = vp.host_id
+    vp.destroy if current_user == vp.host || current_user.admin?
+    redirect_to current_user.admin? ? admin_user_path(user_id) : dashboard_path
   end
 
   private

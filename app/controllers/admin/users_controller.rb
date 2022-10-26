@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
 
   def show
     # mocks the view of the user dashboard but keeps admin user information in application layout
-    render template: 'dashboard/show', locals: { current_user: User.find(params[:id]) }
+    render template: 'dashboard/show', locals: { current_user: User.find(params[:id]), admin_view: true }
   end
 
   def destroy
