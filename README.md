@@ -48,6 +48,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 - Add remaining CRUD functionality for Viewing Parties, like adding and removing invitees once they are created
 - Implement caching and other refactoring to reduce load times by minimizing external API calls.
+- Experiment more with Bootstrap to make site more mobile-friendly.
 - Add email features, like being able to email reminders, or using email to reset password.
 - Add user profile for updating user information/password
 - Additional features for admins such as deleting or modifying existing viewing parties
