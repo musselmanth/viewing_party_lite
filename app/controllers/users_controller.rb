@@ -27,7 +27,11 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password])
       flash[:notice] = "Welcome #{user.name}!"
       session[:user_id] = user.id
-      redirect_to cookies.delete(:return_to) || dashboard_path
+      if user.admin?
+        redirect_to admin_dashboard_path
+      else
+        redirect_to cookies.delete(:return_to) || dashboard_path
+      end
     else
       @error = true
       render :login_form
