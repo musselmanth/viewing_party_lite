@@ -41,10 +41,10 @@
               </a>
               <ul class="dropdown-menu text-small" style="">
                 <li class="ps-3 pt-3"><strong><%= current_user.name %></strong></li>
-                <li class="ps-3"><%= current_user.email %></li>
                 <% if current_user.admin? %>
-                  <li class="ps-3 pb-3 text-muted">Admin Access</li>
+                  <li class="ps-3 text-muted">Admin Access</li>
                 <% end %>
+                <li class="ps-3 pb-3 text-muted"><%= current_user.email %></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><%= link_to "Logout", logout_path, class: "dropdown-item", method: :post %></li>
               </ul>
