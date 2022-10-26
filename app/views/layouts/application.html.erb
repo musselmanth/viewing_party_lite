@@ -28,6 +28,11 @@
           </ul>
         <% else %>
           <ul class="nav nav-pills">
+            
+            <% if current_user.admin? %>
+              <li class="nav-item"><%= link_to "Admin Dashboard", admin_dashboard_path, class: current_page?(admin_dashboard_path) ? "nav-link active" : "nav-link" %></li>
+            <% end %>
+            
             <li class="nav-item"><%= link_to "Dashboard", dashboard_path, class: current_page?(dashboard_path) ? "nav-link active" : "nav-link" %></li>
             <li class="nav-item"><%= link_to "Discover", discover_path, class: current_page?(discover_path) ? "nav-link active" : "nav-link" %></li>
             <div class="dropdown text-start">
@@ -36,7 +41,10 @@
               </a>
               <ul class="dropdown-menu text-small" style="">
                 <li class="ps-3 pt-3"><strong><%= current_user.name %></strong></li>
-                <li class="ps-3 pb-3"><%= current_user.email %></li>
+                <li class="ps-3"><%= current_user.email %></li>
+                <% if current_user.admin? %>
+                  <li class="ps-3 pb-3 text-muted">Admin Access</li>
+                <% end %>
                 <li><hr class="dropdown-divider"></li>
                 <li><%= link_to "Logout", logout_path, class: "dropdown-item", method: :post %></li>
               </ul>
