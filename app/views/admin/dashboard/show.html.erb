@@ -20,7 +20,7 @@
               <td><%= user.name %></td>
               <td><%= user.email %></td>
               <td><%= link_to "Dashboard", admin_user_path(user.id) %></td>
-              <td><%= link_to "Remove User", admin_user_path(user.id), method: :delete %></td>
+              <td><%= link_to "Remove User", admin_user_path(user.id), method: :delete, data: {confirm: "Are you sure you want to delete the user #{user.email}?"} %></td>
             </tr>
           <% end %>
         </tbody>
