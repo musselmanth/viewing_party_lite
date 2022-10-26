@@ -16,6 +16,11 @@ class ViewingPartiesController < ApplicationController
     end
   end
 
+  def destroy
+    ViewingParty.find(params[:id]).destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def vp_params

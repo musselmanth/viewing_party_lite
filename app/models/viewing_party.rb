@@ -28,5 +28,4 @@ class ViewingParty < ApplicationRecord
         @movie = MoviesFacade.get_movie(movie_id)
     end
 
-
 end
