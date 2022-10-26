@@ -20,7 +20,7 @@
     <% current_user.viewing_parties.each do |vp| %>
       <div class="g-col-3 card" id="vp2_<%= vp.movie_id %>">
         <img id="movie_img_<%= vp.movie_id %>" src="<%= vp.image_path %>" class="card-img-top"><br>
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <%= link_to movie_path(vp.movie_id), class: "text-decoration-none" do %>
             <h5 class="card-title"><%= vp.movie_title %></h5>
           <% end %>
