@@ -21,10 +21,10 @@ class UsersController < ApplicationController
   end
 
   def login
-    check_remember_me
     @email = params[:email]
     user = User.find_by(email: @email)
     if user && user.authenticate(params[:password])
+      check_remember_me
       flash[:notice] = "Welcome #{user.name}!"
       session[:user_id] = user.id
       if user.admin?
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
   def check_remember_me
     if params[:remember_me] == "1"
-      cookies[:email] = { value: params[:email], expires: 90.days }
+      cookies[:email] = { value: params[:email], expires: 180.days }
     elsif cookies[:email] == params[:email] && params[:remember_me] == "0"
       cookies.delete :email
     end
