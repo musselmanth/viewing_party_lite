@@ -14,4 +14,9 @@ Rails.application.routes.draw do
     resources :viewing_parties, only: [:new, :create]
   end
 
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#show'
+    resources :users, only: [:show, :destroy]
+  end
+
 end
