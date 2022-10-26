@@ -53,6 +53,10 @@ Viewing Part Lite is an application in which users can explore movie options and
 - Additional features for admins such as deleting or modifying existing viewing parties
 - Use a gem like `redcarpet` to display Markdown properly in Movie Reviews
 
+## Database Diagram
+
+<img src="app/assets/images/readme-database.png" width="500px">
+
 ## Tech Used
 
 - Ruby 2.7.4
