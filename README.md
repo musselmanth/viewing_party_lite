@@ -61,4 +61,8 @@ Viewing Part Lite is an application in which users can explore movie options and
 - PostgreSQL
 - Deployed via Heroku
 
+## Collaborators
+
+[Taryn Orlemann!](https://github.com/torlemann)
+
 Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
