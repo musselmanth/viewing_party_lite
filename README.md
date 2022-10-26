@@ -65,4 +65,8 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 [Taryn Orlemann!](https://github.com/torlemann)
 
+Her version of the origin paired project can be found [here.](https://github.com/torlemann/viewing_party_lite)
+
+## Project Wireframs
+
 Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
