@@ -20,7 +20,8 @@ class ViewingPartiesController < ApplicationController
     vp = ViewingParty.find(params[:id])
     user_id = vp.host_id
     vp.destroy if current_user == vp.host || current_user.admin?
-    redirect_to current_user.admin? ? admin_user_path(user_id) : dashboard_path
+    flash[:notice] = "Viewing Party Cancelled."
+    redirect_to current_user.admin? && user_id != current_user.id ? admin_user_path(user_id) : dashboard_path
   end
 
   private
