@@ -13,7 +13,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 ## Learning Goals
 
 - Consume an API with multiple endoints using principles of OOP.
-- Test consumption of APIs using toold like Webmock and VCR.
+- Test consumption of APIs using tools like Webmock and VCR.
 - Learn and implement User Authentication, including for different user roles (admin access)
 - Learn and implement Bootstrap for a professional front-end appearance.
 - Use client cookies to implement a more user-friendly experience.
@@ -42,7 +42,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 <img src="app/assets/images/readme-admin.png" width="500px">
 
-- API consumption is done in an organized and scalable way using servies, facades, and POROs.
+- API consumption is done in an organized and scalable way using services, facades, and POROs.
 
 ## Future Goals
 
