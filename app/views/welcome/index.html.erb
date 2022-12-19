@@ -8,11 +8,11 @@
       <div class="text-start">
         <h4>Test Accounts</h4>
         <ul>
-          <li>Email: bb@test.com, pw: test123</li>
-          <li>Email: jj@test.com, pw: test123</li>
-          <li>Email: ss@test.com, pw: test123</li>
-          <li>Email: rr@test.com, pw: test123</li>
-          <li>Email: admin@test.com, pw: test123 (admin access)</li>
+          <li>Email: bb@test.com, pw: test123. <%= link_to "Click Here", login_path(email: "bb@test.com", password: "test123"), method: :post %> to skip login form and login as this user.</li>
+          <li>Email: jj@test.com, pw: test123. <%= link_to "Click Here", login_path(email: "jj@test.com", password: "test123"), method: :post %> to skip login form and login as this user.</li>
+          <li>Email: ss@test.com, pw: test123. <%= link_to "Click Here", login_path(email: "ss@test.com", password: "test123"), method: :post %> to skip login form and login as this user.</li>
+          <li>Email: rr@test.com, pw: test123. <%= link_to "Click Here", login_path(email: "rr@test.com", password: "test123"), method: :post %> to skip login form and login as this user.</li>
+          <li>Email: admin@test.com, pw: test123 (admin access). <%= link_to "Click Here", login_path(email: "admin@test.com", password: "test123"), method: :post %> to skip login form and login as this user.</li>
         </ul>
         <h4>About</h4>
         <p>View more information about the project on the GitHub Repository README linked below. To test the functionality of the app you can use one of the test accounts listed above, or register as a new user. </p>
