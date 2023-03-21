@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: viewing_party_lite_production
-  username: <%= EVN['VIEWING_PARTY_LITE_DATABASE_USER'] %>
+  username: <%= ENV['VIEWING_PARTY_LITE_DATABASE_USER'] %>
   password: <%= ENV['VIEWING_PARTY_LITE_DATABASE_PASSWORD'] %>
