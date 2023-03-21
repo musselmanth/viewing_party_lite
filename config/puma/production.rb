@@ -2,7 +2,7 @@
 rails_env = "production"
 environment rails_env
 
-app_dir = File.expand_path("../..", __FILE__)
+app_dir = "/home/tom/demo_apps/viewing_party_lite"
 
 bind  "unix://#{app_dir}/puma.sock"
 pidfile "#{app_dir}/puma.pid"
