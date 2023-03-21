@@ -1,19 +1,22 @@
 
-rails_env = "production"
+# Change to match your CPU core count
+workers 0
+
+# Min and Max threads per worker
+threads 1, 6
+
+# Default to production
+rails_env = ENV['RAILS_ENV'] || "production"
 environment rails_env
 
-app_dir = "/home/tom/demo_apps/viewing_party_lite"
+# Set up socket location
+#bind "unix://#{shared_dir}/sockets/puma.sock"
+bind "unix:/home/tom/demo_apps/viewing_party_lite/puma.sock"
 
-bind  "unix://#{app_dir}/puma.sock"
-pidfile "#{app_dir}/puma.pid"
-state_path "#{app_dir}/puma.state"
-directory "#{app_dir}/"
+# Logging
+stdout_redirect "/home/tom/demo_apps/viewing_party_lite/log/puma.stdout.log", "/home/tom/demo_apps/viewing_party_lite/log/puma.stderr.log", true
 
-stdout_redirect "#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true
-
-workers 1
-threads 1,2
-
-activate_control_app "unix://#{app_dir}/pumactl.sock"
-
-prune_bundler
+# Set master PID and state locations
+pidfile "/home/tom/demo_apps/viewing_party_lite/puma.pid"
+state_path "/home/tom/demo_apps/viewing_party_lite/puma.state"
+activate_control_app
